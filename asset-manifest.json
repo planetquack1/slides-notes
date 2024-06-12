@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/slides-notes/static/css/main.a38df114.css",
+    "main.js": "/slides-notes/static/js/main.48135a3a.js",
+    "static/js/453.4f8b3189.chunk.js": "/slides-notes/static/js/453.4f8b3189.chunk.js",
+    "static/media/sermon.pdf": "/slides-notes/static/media/sermon.50071a814e27b710226d.pdf",
+    "static/media/bootstrap-icons.woff?": "/slides-notes/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
+    "static/media/dice.png": "/slides-notes/static/media/dice.925101900fa66328cc54.png",
+    "static/media/bootstrap-icons.woff2?": "/slides-notes/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
+    "static/media/notes-app.webp": "/slides-notes/static/media/notes-app.2dff468f57a0f355ae94.webp",
+    "index.html": "/slides-notes/index.html",
+    "main.a38df114.css.map": "/slides-notes/static/css/main.a38df114.css.map",
+    "main.48135a3a.js.map": "/slides-notes/static/js/main.48135a3a.js.map",
+    "453.4f8b3189.chunk.js.map": "/slides-notes/static/js/453.4f8b3189.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a38df114.css",
+    "static/js/main.48135a3a.js"
+  ]
+}
