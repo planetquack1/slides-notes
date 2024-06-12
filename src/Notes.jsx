@@ -31,7 +31,9 @@ const Notes = ({ pdfFile, numPages }) => {
 
   useEffect(() => {
     const storedNotes = localStorage.getItem("inputNotes");
-    setNotes(JSON.parse(storedNotes));
+    if (storedNotes !== null) {
+      setNotes(JSON.parse(storedNotes));
+    }
   }, []);
 
   return (
