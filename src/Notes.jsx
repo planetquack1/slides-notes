@@ -6,7 +6,7 @@ import dice from './dice.png'
 import sound from './sound.jpg'
 import notesApp from './notes-app.webp'
 
-const Notes = ({ pdfFile, numPages, title }) => {
+const Notes = ({ pdfFile, numPages }) => {
 
   const [notes, setNotes] = useState(
     Array.from({ length: numPages }, () => "")
