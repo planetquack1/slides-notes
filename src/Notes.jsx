@@ -6,7 +6,7 @@ import dice from './dice.png'
 import sound from './sound.jpg'
 import notesApp from './notes-app.webp'
 
-const Notes = ({ pdfFile, numPages }) => {
+const Notes = ({ pdfFile, numPages, title }) => {
 
   const [notes, setNotes] = useState(
     Array.from({ length: numPages }, () => "")
@@ -38,7 +38,7 @@ const Notes = ({ pdfFile, numPages }) => {
 
   return (
     <div className="notes-container">
-      <NotesList notes={notes} onNoteChange={handleNoteChange} pdfFile={pdfFile} />
+      <NotesList notes={notes} onNoteChange={handleNoteChange} pdfFile={pdfFile} title={title}/>
       {/* <Download notes={notes} title={title} /> */}
       <CopyToClipBoard
         text={file(notes)}

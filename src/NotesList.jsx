@@ -2,7 +2,7 @@ import NoteText from './NoteText'
 import { Document, Page } from 'react-pdf';
 import { useWindowWidth } from '@wojtekmaj/react-hooks';
 
-const NotesList = ({ notes, onNoteChange, pdfFile }) => {
+const NotesList = ({ notes, onNoteChange, pdfFile, title }) => {
 
   const width = useWindowWidth();
 
@@ -11,15 +11,12 @@ const NotesList = ({ notes, onNoteChange, pdfFile }) => {
       {notes.map((note, index) => (
         <div key={index} className="note">
           <div className='document'>
-            <Document file={pdfFile}>
-              <Page 
-                pageNumber={index + 1} 
-                renderAnnotationLayer={false} 
-                renderTextLayer={false} 
-                width={(width < 1350 ? width - 20 : 1000)}
-              >
-              </Page>
-            </Document>
+            <img
+              src={"sermon-images/sermon-images-" + index + ".jpg"}
+              alt={title}
+              width={(width < 1350 ? width - 20 : 1000)}
+            >
+            </img>
           </div>
           <div className='note-text'>
             <NoteText
