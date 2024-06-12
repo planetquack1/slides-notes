@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import Notes from './Notes'
+// import MakePDFResponsive from './MakePDFResponsive'
+
+import { React } from "react"
+import { pdfjs } from "react-pdf"
+import pdfFile from "./sermon.pdf"
+import 'bootstrap-icons/font/bootstrap-icons.css'
+
+// import 'bootstrap'
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/legacy/build/pdf.worker.min.js`;
 
 function App() {
+
+  const numPages = 46
+  const title = "Persevering and Maturing in Christ"
+  const subtitle = "Level Up!"
+  const color_mode = "dark"
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container" color_mode={color_mode}>
+      {/* <MakePDFResponsive /> */}
+      <div className="pdf-title">
+        {title}
+      </div>
+      <div className="pdf-subtitle">
+        {subtitle}
+      </div>
+      <Notes pdfFile={pdfFile} numPages={numPages} title={title} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
