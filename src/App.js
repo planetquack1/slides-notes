@@ -1,5 +1,4 @@
 import Notes from './Notes'
-// import MakePDFResponsive from './MakePDFResponsive'
 
 import { React } from "react"
 import { pdfjs } from "react-pdf"
@@ -19,14 +18,13 @@ function App() {
 
   return (
     <div className="app-container" color_mode={color_mode}>
-      {/* <MakePDFResponsive /> */}
       <div className="pdf-title">
         {title}
       </div>
       <div className="pdf-subtitle">
         {subtitle}
       </div>
-      <Notes pdfFile={pdfFile} numPages={numPages} title={title} />
+      <Notes numPages={numPages} title={title} />
     </div>
   )
 }

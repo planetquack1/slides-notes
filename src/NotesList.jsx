@@ -2,10 +2,7 @@ import NoteText from './NoteText'
 import { Document, Page } from 'react-pdf';
 import { useWindowWidth } from '@wojtekmaj/react-hooks';
 
-const images = require.context('./sermon-images', true);
-const imageList = images.keys().map(image => images(image));
-
-const NotesList = ({ notes, onNoteChange, pdfFile, title }) => {
+const NotesList = ({ notes, imageList, onNoteChange, title }) => {
 
   const width = useWindowWidth();
 
