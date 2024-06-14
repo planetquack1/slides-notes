@@ -1,12 +1,10 @@
 {
   "files": {
-    "main.css": "/slides-notes/static/css/main.a38df114.css",
-    "main.js": "/slides-notes/static/js/main.87fd82a2.js",
+    "main.css": "/slides-notes/static/css/main.6020a0aa.css",
+    "main.js": "/slides-notes/static/js/main.e442163c.js",
     "static/js/453.97601109.chunk.js": "/slides-notes/static/js/453.97601109.chunk.js",
     "static/media/sermon-15.png": "/slides-notes/static/media/sermon-15.d867214db195b7984289.png",
-    "static/media/sermon.pdf": "/slides-notes/static/media/sermon.50071a814e27b710226d.pdf",
     "static/media/sermon-04.png": "/slides-notes/static/media/sermon-04.6f7ebb18766f6d885cab.png",
-    "static/media/sermon.jpg": "/slides-notes/static/media/sermon.3095724634480463cf9d.jpg",
     "static/media/sermon-14.png": "/slides-notes/static/media/sermon-14.2cccef3852e8e085f026.png",
     "static/media/sermon-43.png": "/slides-notes/static/media/sermon-43.ddb09981eb228f98df2a.png",
     "static/media/sermon-12.png": "/slides-notes/static/media/sermon-12.f33446ac3118150dabb5.png",
@@ -58,12 +56,12 @@
     "static/media/sermon-mq.jpg": "/slides-notes/static/media/sermon-mq.a0436c0d76c240da9f79.jpg",
     "static/media/notes-app.webp": "/slides-notes/static/media/notes-app.2dff468f57a0f355ae94.webp",
     "index.html": "/slides-notes/index.html",
-    "main.a38df114.css.map": "/slides-notes/static/css/main.a38df114.css.map",
-    "main.87fd82a2.js.map": "/slides-notes/static/js/main.87fd82a2.js.map",
+    "main.6020a0aa.css.map": "/slides-notes/static/css/main.6020a0aa.css.map",
+    "main.e442163c.js.map": "/slides-notes/static/js/main.e442163c.js.map",
     "453.97601109.chunk.js.map": "/slides-notes/static/js/453.97601109.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a38df114.css",
-    "static/js/main.87fd82a2.js"
+    "static/css/main.6020a0aa.css",
+    "static/js/main.e442163c.js"
   ]
 }
