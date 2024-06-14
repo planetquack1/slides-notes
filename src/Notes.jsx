@@ -50,7 +50,7 @@ const Notes = ({ numPages, title }) => {
       // Create an HTML string that includes all the images
       let htmlString = '<html><body>';
       imgUrls.forEach((imgUrl, index) => {
-        htmlString += `<p>${notes[index]}</p><img src="${imgUrl}" /><br>`;
+        htmlString += `<img src="${imgUrl}" /><p>${notes[index]}</p><br>`;
       });
       htmlString += '</body></html>';
 
