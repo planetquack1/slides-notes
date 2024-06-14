@@ -4,6 +4,7 @@ import { React } from "react"
 // import { pdfjs } from "react-pdf"
 // import pdfFile from "./sermon.pdf"
 import 'bootstrap-icons/font/bootstrap-icons.css'
+import metadata from './sermons/level-up/persevering-and-maturing-in-christ/metadata.json'
 
 // import 'bootstrap'
 
@@ -11,20 +12,17 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 
 function App() {
 
-  const numPages = 46
-  const title = "Persevering and Maturing in Christ"
-  const subtitle = "Level Up!"
   const color_mode = "dark"
 
   return (
     <div className="app-container" color_mode={color_mode}>
       <div className="title">
-        {title}
+        {metadata['title']}
       </div>
       <div className="subtitle">
-        {subtitle}
+        {metadata['series']  + ' #' + metadata['series_number']}
       </div>
-      <Notes numPages={numPages} title={title} />
+      <Notes numSlides={metadata['number_of_slides']} title={metadata['title']} series={metadata['series']} seriesNumber={metadata['series_number']} />
     </div>
   )
 }

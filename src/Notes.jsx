@@ -20,22 +20,22 @@ const series = 'level-up';
 const images = require.context('./sermons/level-up/persevering-and-maturing-in-christ/slideshow-images', true);
 const imageList = images.keys().map(image => images(image));
 
-const Notes = ({ numPages, title }) => {
+const Notes = ({ numSlides, title, series, seriesNumber }) => {
 
   const [notes, setNotes] = useState(
-    Array.from({ length: numPages }, () => "")
+    Array.from({ length: numSlides }, () => "")
   );
 
-  const file = (notes, imageList) => {
-    return (
-      notes.map((note, index) => (
-        `<div key=${index}>
-        ${note}
-        <img src=${imageList[index]} width='200'>
-      </div>`
-      )).join('')
-    );
-  };
+  // const file = (notes, imageList) => {
+  //   return (
+  //     notes.map((note, index) => (
+  //       `<div key=${index}>
+  //       ${note}
+  //       <img src=${imageList[index]} width='200'>
+  //     </div>`
+  //     )).join('')
+  //   );
+  // };
 
   const handleNoteChange = (index, newValue) => {
     const updatedNotes = [...notes];
@@ -55,18 +55,43 @@ const Notes = ({ numPages, title }) => {
   async function copyToClipboard(notes, imgUrls) {
     try {
       // Create an HTML string that includes all the data
-      let htmlString = '<html><body>';
+      let htmlString = `<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<title></title>
+
+<meta name="Generator" content="Cocoa HTML Writer">
+
+<style type="text/css">
+
+p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 50.0px '.SF UI Text'; color: #454545}
+
+span.s1 {font-family: '.SFUIText'; font-weight: normal; font-style: normal; font-size: 50.00pt}
+
+h1 { display: inline }
+
+</style>
+
+</head><body>`;
+      // add title and subtitle
+      htmlString += (`<h1><h2><p class="p1"><span class="s1">${title}</span></p></h1></h2>
+                      <h1>${series + ' #' + seriesNumber}</h1><p></p><p>`);
       imgUrls.forEach((imgUrl, index) => {
 
         const slideTitleData = metadata[index + 1]
-        const slideTitle = slideTitleData ? `<h2>${slideTitleData}</h2>` : ''
+        const slideTitle = slideTitleData ? `<h1>${slideTitleData}</h1>` : ''
 
         const notesData = notes[index]
         const note = notesData ? `<p>${notesData}</p>` : ''
 
         htmlString += (slideTitle + `<img src="${imgUrl}" />` + note + '<p></p>');
       });
-      htmlString += '</body></html>';
+      htmlString += '</p></body></html>';
 
       // Convert the HTML string to a blob
       const blob = new Blob([htmlString], { type: 'text/html' });
