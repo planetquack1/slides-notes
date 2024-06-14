@@ -5,12 +5,19 @@ import CopyToClipBoard from "react-copy-to-clipboard";
 import dice from './dice.png'
 import sound from './sound.jpg'
 import notesApp from './notes-app.webp'
-import sermon from './sermon.jpg'
+// import sermon from './sermon.jpg'
 import sermonTitle from './sermon-title.jpeg'
 import sermonLq from './sermon-lq.jpg'
 import sermonMq from './sermon-mq.jpg'
 
-const images = require.context('./sermon-pngs', true);
+import metadata from './sermons/level-up/persevering-and-maturing-in-christ/metadata.json'
+
+const title = 'persevering-and-maturing-in-christ';
+const series = 'level-up';
+
+// const images_path = './sermons/' + series + '/' + title + '/slideshow-images';
+
+const images = require.context('./sermons/level-up/persevering-and-maturing-in-christ/slideshow-images', true);
 const imageList = images.keys().map(image => images(image));
 
 const Notes = ({ numPages, title }) => {
@@ -47,10 +54,17 @@ const Notes = ({ numPages, title }) => {
 
   async function copyToClipboard(notes, imgUrls) {
     try {
-      // Create an HTML string that includes all the images
+      // Create an HTML string that includes all the data
       let htmlString = '<html><body>';
       imgUrls.forEach((imgUrl, index) => {
-        htmlString += `<img src="${imgUrl}" /><p>${notes[index]}</p><br>`;
+
+        const slideTitleData = metadata[index + 1]
+        const slideTitle = slideTitleData ? `<h2>${slideTitleData}</h2>` : ''
+
+        const notesData = notes[index]
+        const note = notesData ? `<p>${notesData}</p>` : ''
+
+        htmlString += (slideTitle + `<img src="${imgUrl}" />` + note + '<p></p>');
       });
       htmlString += '</body></html>';
 
@@ -72,7 +86,7 @@ const Notes = ({ numPages, title }) => {
 
   return (
     <div className="notes-container">
-      <NotesList notes={notes} imageList={imageList} onNoteChange={handleNoteChange} title={title} />
+      <NotesList notes={notes} imageList={imageList} onNoteChange={handleNoteChange} title={title} metadata={metadata} />
       <div className="copy">
         <button className="copy-button"
           style={{

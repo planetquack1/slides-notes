@@ -2,7 +2,11 @@ import NoteText from './NoteText'
 import { Document, Page } from 'react-pdf';
 import { useWindowWidth } from '@wojtekmaj/react-hooks';
 
-const NotesList = ({ notes, imageList, onNoteChange, title }) => {
+import { Interweave } from 'interweave';
+
+const NotesList = ({ notes, imageList, onNoteChange, title, metadata}) => {
+
+  // const metadata = JSON.parse(metadataJson)
 
   const width = useWindowWidth();
 
@@ -10,6 +14,9 @@ const NotesList = ({ notes, imageList, onNoteChange, title }) => {
     <div className="notes-list">
       {notes.map((note, index) => (
         <div key={index} className="note">
+          <div className="slide-title">
+            <Interweave content={metadata[index + 1]} />
+          </div>
           <div className='document'>
             <img 
               key={index} 

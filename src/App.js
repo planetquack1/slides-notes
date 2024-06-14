@@ -1,13 +1,13 @@
 import Notes from './Notes'
 
 import { React } from "react"
-import { pdfjs } from "react-pdf"
-import pdfFile from "./sermon.pdf"
+// import { pdfjs } from "react-pdf"
+// import pdfFile from "./sermon.pdf"
 import 'bootstrap-icons/font/bootstrap-icons.css'
 
 // import 'bootstrap'
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/legacy/build/pdf.worker.min.js`;
+// pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/legacy/build/pdf.worker.min.js`;
 
 function App() {
 
@@ -18,10 +18,10 @@ function App() {
 
   return (
     <div className="app-container" color_mode={color_mode}>
-      <div className="pdf-title">
+      <div className="title">
         {title}
       </div>
-      <div className="pdf-subtitle">
+      <div className="subtitle">
         {subtitle}
       </div>
       <Notes numPages={numPages} title={title} />

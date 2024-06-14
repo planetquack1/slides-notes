@@ -58,7 +58,7 @@ textarea {
   }
 }
 
-.pdf-title {
+.title {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 60px;
   font-weight: 600;
@@ -66,12 +66,22 @@ textarea {
   margin: 40px 40px 0px;
 }
 
-.pdf-subtitle {
+.subtitle {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 40px;
   font-weight: 400;
   color: light-dark(black, white);
   margin: 20px 40px 20px;
+}
+
+.slide-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: light-dark(black, white);
+  margin: 0px 20px 20px;
+  width: 900px;
+  overflow-x:scroll ;
 }
 
 .button {
