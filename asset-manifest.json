@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/slides-notes/static/css/main.6020a0aa.css",
-    "main.js": "/slides-notes/static/js/main.e442163c.js",
+    "main.css": "/slides-notes/static/css/main.6c97ade6.css",
+    "main.js": "/slides-notes/static/js/main.3c73e52b.js",
     "static/js/453.97601109.chunk.js": "/slides-notes/static/js/453.97601109.chunk.js",
     "static/media/sermon-15.png": "/slides-notes/static/media/sermon-15.d867214db195b7984289.png",
     "static/media/sermon-04.png": "/slides-notes/static/media/sermon-04.6f7ebb18766f6d885cab.png",
@@ -56,12 +56,12 @@
     "static/media/sermon-mq.jpg": "/slides-notes/static/media/sermon-mq.a0436c0d76c240da9f79.jpg",
     "static/media/notes-app.webp": "/slides-notes/static/media/notes-app.2dff468f57a0f355ae94.webp",
     "index.html": "/slides-notes/index.html",
-    "main.6020a0aa.css.map": "/slides-notes/static/css/main.6020a0aa.css.map",
-    "main.e442163c.js.map": "/slides-notes/static/js/main.e442163c.js.map",
+    "main.6c97ade6.css.map": "/slides-notes/static/css/main.6c97ade6.css.map",
+    "main.3c73e52b.js.map": "/slides-notes/static/js/main.3c73e52b.js.map",
     "453.97601109.chunk.js.map": "/slides-notes/static/js/453.97601109.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6020a0aa.css",
-    "static/js/main.e442163c.js"
+    "static/css/main.6c97ade6.css",
+    "static/js/main.3c73e52b.js"
   ]
 }
