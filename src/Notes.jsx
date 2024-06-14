@@ -80,7 +80,7 @@ h1 { display: inline }
 </head><body>`;
       // add title and subtitle
       htmlString += (`<h1><h2><p class="p1"><span class="s1">${title}</span></p></h1></h2>
-                      <h1>${series + ' #' + seriesNumber}</h1><p></p><p>`);
+                      <p>${series + ' #' + seriesNumber}</p><p></p><p>`);
       imgUrls.forEach((imgUrl, index) => {
 
         const slideTitleData = metadata[index + 1]
