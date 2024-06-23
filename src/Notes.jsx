@@ -45,14 +45,14 @@ const Notes = ({ numSlides, title, series, seriesNumber, slideExtracts }) => {
     updatedNotes[index] = newValue;
     setNotes(updatedNotes);
 
-    localStorage.setItem("inputNotes", JSON.stringify(updatedNotes));
+    localStorage.setItem(title + "--" + series, JSON.stringify(updatedNotes));
   };
 
   useEffect(() => {
     // const updatedNotes = [...notes].concat(Array.from({ length: Math.max(0, numSlides - notes.length) }, () => "")).slice(0, numSlides);
     // setNotes(updatedNotes);
 
-    const storedNotes = localStorage.getItem("inputNotes");
+    const storedNotes = localStorage.getItem(title + "--" + series);
     if (storedNotes !== null) {
       setNotes(JSON.parse(storedNotes));
     }
