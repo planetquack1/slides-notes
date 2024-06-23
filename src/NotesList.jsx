@@ -10,10 +10,12 @@ const NotesList = ({ notes, imageList, onNoteChange, title, metadata }) => {
 
   const width = useWindowWidth();
 
+  // console.log(notes)
+
   return (
     <div className="notes-list">
       {notes.map((note, index) => (
-        <div style={{
+        <div key={index} style={{
           display: 'flex',
           flexDirection: 'column',
           flexWrap: 'wrap'

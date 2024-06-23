@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { isBrowser } from 'react-device-detect';
+
 import NotesList from "./NotesList"
 import Download from "./Download";
 import CopyToClipBoard from "react-copy-to-clipboard";
@@ -20,7 +22,7 @@ const series = 'level-up';
 const images = require.context('./sermons/level-up/persevering-and-maturing-in-christ/slideshow-images', true);
 const imageList = images.keys().map(image => images(image));
 
-const Notes = ({ numSlides, title, series, seriesNumber }) => {
+const Notes = ({ numSlides, title, series, seriesNumber, slideExtracts }) => {
 
   const [notes, setNotes] = useState(
     Array.from({ length: numSlides }, () => "")
@@ -38,7 +40,8 @@ const Notes = ({ numSlides, title, series, seriesNumber }) => {
   // };
 
   const handleNoteChange = (index, newValue) => {
-    const updatedNotes = [...notes];
+    const updatedNotes = [...notes].concat(Array.from({ length: Math.max(0, numSlides - notes.length) }, () => "")).slice(0, numSlides);
+    // const updatedNotes = [...notes, "", ""];
     updatedNotes[index] = newValue;
     setNotes(updatedNotes);
 
@@ -46,10 +49,14 @@ const Notes = ({ numSlides, title, series, seriesNumber }) => {
   };
 
   useEffect(() => {
+    // const updatedNotes = [...notes].concat(Array.from({ length: Math.max(0, numSlides - notes.length) }, () => "")).slice(0, numSlides);
+    // setNotes(updatedNotes);
+
     const storedNotes = localStorage.getItem("inputNotes");
     if (storedNotes !== null) {
       setNotes(JSON.parse(storedNotes));
     }
+    // console.log(JSON.parse(storedNotes))
   }, []);
 
   async function copyToClipboard(notes, imgUrls) {
@@ -80,16 +87,25 @@ h1 { display: inline }
 </head><body>`;
       // add title and subtitle
       htmlString += (`<h1><h2><p class="p1"><span class="s1">${title}</span></p></h1></h2>
-                      <p>${series + ' #' + seriesNumber}</p><p></p><p>`);
+                      <p>${series + ' #' + seriesNumber}</p><p></p><p>Link to Slideshow PDF`);
       imgUrls.forEach((imgUrl, index) => {
 
         const slideTitleData = metadata[index + 1]
         const slideTitle = slideTitleData ? `<h1>${slideTitleData}</h1>` : ''
 
+        const slideExtractData = slideExtracts[index + 1]
+        const slideExtract = slideExtractData ? `<blockquote>${slideExtractData}</blockquote>` : ''
+
         const notesData = notes[index]
         const note = notesData ? `<p>${notesData}</p>` : ''
 
-        htmlString += (slideTitle + `<img src="${imgUrl}" />` + note + '<p></p>');
+        htmlString += slideTitle
+        
+        if (isBrowser) {
+          htmlString += (`<img src="${imgUrl}" />` + note + '<p></p>');
+        } else {
+          htmlString += (slideExtract + note + '<p></p>');
+        }
       });
       htmlString += '</p></body></html>';
 

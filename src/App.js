@@ -22,7 +22,7 @@ function App() {
       <div className="subtitle">
         {metadata['series']  + ' #' + metadata['series_number']}
       </div>
-      <Notes numSlides={metadata['number_of_slides']} title={metadata['title']} series={metadata['series']} seriesNumber={metadata['series_number']} />
+      <Notes numSlides={metadata['number_of_slides']} title={metadata['title']} series={metadata['series']} seriesNumber={metadata['series_number']} slideExtracts={metadata['slide_extracts']} />
     </div>
   )
 }
