@@ -104,7 +104,10 @@ h1 { display: inline }
         if (isBrowser) {
           htmlString += (`<img src="${imgUrl}" />` + note + '<p></p>');
         } else {
-          htmlString += (slideExtract + note + '<p></p>');
+          htmlString += (slideExtract + note);
+          if (slideExtract !== '') {
+            htmlString += '<p></p>'
+          }
         }
       });
       htmlString += '</p></body></html>';
