@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { isBrowser } from 'react-device-detect';
+import { isMobile, isBrowser } from 'react-device-detect';
 
 import NotesList from "./NotesList"
 import Download from "./Download";
@@ -103,7 +103,8 @@ h1 { display: inline }
         
         if (isBrowser) {
           htmlString += (`<img src="${imgUrl}" />` + note + '<p></p>');
-        } else {
+        } 
+        if (isMobile) {
           htmlString += (slideExtract + note);
           if (slideExtract !== '') {
             htmlString += '<p></p>'
